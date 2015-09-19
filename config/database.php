@@ -64,7 +64,18 @@ return [
             'strict'    => false,
         ],
 
-        
+        'mysql-tunnel' => [
+        'driver'    => 'mysql',
+        'host'      => '127.0.0.1',
+        'port'      => '13306',
+        'database'  => 'asclepios.mysql.eu2.frbit.com',
+        'username'  => 'asclepios',
+        'password'  => 'H8Ckdz-DK-LIbmH3riEGEBGV',
+        'charset'   => 'utf8',
+        'collation' => 'utf8_unicode_ci',
+        'prefix'    => '',
+        'strict'    => false,
+    ],
 
         'pgsql' => [
             'driver'   => 'pgsql',

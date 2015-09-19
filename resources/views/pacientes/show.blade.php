@@ -105,29 +105,7 @@
 			</div><!-- end tab 2 -->
 			<div id="fragment-3">
 
-			<div class="form-group">
-					{!! Form::label('peso_kilos', 'Peso KG', ['class' => 'control-label']) !!}
-					
-					{!! Form::text('peso_kilos', $paciente->consultas->last()->peso_kilos, ['readonly', 'class' => 'form-control margin-bottom']) !!}
-				</div>
-
-				<div class="form-group">
-					{!! Form::label('imc', 'IMC', ['class' => 'control-label']) !!}
-					
-					{!! Form::text('imc', $paciente->consultas->last()->imc, ['readonly', 'class' => 'form-control margin-bottom']) !!}
-				</div>
-
-				<div class="form-group">
-					{!! Form::label('porcentaje_grasa', '% Grasa', ['class' => 'control-label']) !!}
-					
-					{!! Form::text('porcentaje_grasa', $paciente->consultas->last()->porcentaje_grasa, ['readonly', 'class' => 'form-control margin-bottom']) !!}
-				</div>
-
-				<div class="form-group">
-					{!! Form::label('hidratacion', 'Hidratación', ['class' => 'control-label']) !!}
-					
-					{!! Form::text('hidratacion', $paciente->consultas->last()->hidratacion, ['readonly', 'class' => 'form-control margin-bottom']) !!}
-				</div>
+			
 
 				<div class="form-group">
 					{!! Form::label('sangre', 'Tipo de Sangre', ['class' => 'control-label']) !!}

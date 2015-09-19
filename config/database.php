@@ -68,7 +68,7 @@ return [
         'driver'    => 'mysql',
         'host'      => '127.0.0.1',
         'port'      => '13306',
-        'database'  => 'asclepios.mysql.eu2.frbit.com',
+        'database'  => 'asclepios',
         'username'  => 'asclepios',
         'password'  => 'H8Ckdz-DK-LIbmH3riEGEBGV',
         'charset'   => 'utf8',

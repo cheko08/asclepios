@@ -19,10 +19,10 @@ class CreateConsultasTable extends Migration
             $table->integer('paciente_id');
             $table->integer('dieta_id');
             $table->integer('cita_id');
-            $table->integer('peso_kilos', 3, 2);
-            $table->integer('imc', 3, 2);
-            $table->integer('porcentaje_grasa', 3, 2);
-            $table->integer('hidratacion', 3, 2);
+            $table->integer('peso_kilos');
+            $table->integer('imc');
+            $table->integer('porcentaje_grasa');
+            $table->integer('hidratacion');
             $table->text('comentarios');
             $table->timestamps();
 

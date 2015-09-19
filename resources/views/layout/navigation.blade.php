@@ -36,8 +36,8 @@
               </ul>
             </li>
         @else
-            <liclass="{{Request::path() == 'auth/login' ? 'active' : ''}}"><a href="{{ url('auth/login') }}">Iniciar Sesión</a></li>
-            <liclass="{{Request::path() == 'auth/register' ? 'active' : ''}}"><a href="{{ url('auth/register') }}">Registrarse</a></li>
+            <li class="{{Request::path() == 'auth/login' ? 'active' : ''}}"><a href="{{ url('auth/login') }}">Iniciar Sesión</a></li>
+            <li class="{{Request::path() == 'auth/register' ? 'active' : ''}}"><a href="{{ url('auth/register') }}">Registrarse</a></li>
         @endif
           </ul>
         </div><!--/.nav-collapse -->

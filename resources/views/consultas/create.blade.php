@@ -10,7 +10,7 @@
 			{!! Form::submit('Guardar Consulta', ['class' => 'btn btn-lg btn-success']) !!}
 		</div>
 		<div class="form-group">
-			<a href="{{ url('consultas/'.$paciente) }}" class="btn btn-lg btn-warning" role="button">Cancelar</a>
+			<a href="{{ url('consultas/'.$paciente) }}" class="btn btn-lg btn-default" role="button">Cancelar</a>
 		</div>
 	</div>
 

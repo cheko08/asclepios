@@ -9,7 +9,7 @@
 	
 
 
-			</br></br><a href="{{ url('pacientes/'.$paciente) }}" class="btn btn-lg btn-warning" role="button">Cancelar</a>
+			</br></br><a href="{{ url('pacientes/'.$paciente) }}" class="btn btn-lg btn-default" role="button">Cancelar</a>
 		
 	</div>
 

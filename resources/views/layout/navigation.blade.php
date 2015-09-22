@@ -9,7 +9,9 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="{{ url('/') }}">Asclepios</a>
+          <a class="navbar-brand" href="{{ url('/') }}">
+            <img alt="Brand" src="{{ asset('assets/images/rsz_1favicon.png')  }}" class="img-responsive"> 
+          </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
         @if(Auth::check())

@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Paciente;
+use App\Consulta;
 use Auth;
+use DB;
 use App\Http\Requests\CreatePacienteRequest;
 
 class PacienteController extends Controller
@@ -59,9 +61,20 @@ class PacienteController extends Controller
      */
     public function show($id)
     {
-        $paciente = Paciente::findOrFail($id);
+        $paciente = Paciente::find($id);
+        $consulta = DB::table('consultas')->where('paciente_id', '=', $paciente->id)->orderBy('id','DESC')->first();
+        if($consulta)
+        {
+            $peso_kilos = $consulta->peso_kilos;
+            $imc = $consulta->imc;
+        }
+        else
+        {
+            $peso_kilos = 0;
+            $imc = 0;
+        }
 
-        return view('pacientes.show', compact('paciente'));
+        return view('pacientes.show', compact('paciente', 'peso_kilos', 'imc'));
     }
 
 

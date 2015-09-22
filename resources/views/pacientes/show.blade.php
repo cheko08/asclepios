@@ -7,29 +7,31 @@
 		{!! Form::model($paciente, ['url' => ['pacientes/update', $paciente->id], 'method' => 'PATCH', 'class' => 'form-horizontal']) !!}
 
 		<div class="form-group">
-			{!! Form::submit('Guardar Paciente', ['class' => 'btn btn-lg btn-success']) !!}
+			{!! Form::submit('Guardar', ['class' => 'btn btn-lg btn-menu btn-success']) !!}
 		</div>
 		<div class="form-group">
-			<a href="{{ url('pacientes') }}" class="btn btn-lg btn-warning" role="button">Cancelar</a>
-		</div>
-
-		<div class="form-group">
-			<a onclick="return confirm('¿Desea borrar este paciente?')" href="{{ url('pacientes/destroy/'.$paciente->id) }}" id="eliminar_paciente" class="btn btn-danger" role="button">Eliminar</a>
+			<a href="{{ url('pacientes') }}" class="btn btn-lg btn-menu btn-default" role="button">Cancelar</a>
 		</div>
 
 		<div class="form-group">
-			<a href="{{ url('consultas/'.$paciente->id) }}"  class="btn btn-lg btn-primary" role="button">Ver Consultas</a>
+			<a href="{{ url('consultas/'.$paciente->id) }}"  class="btn btn-lg btn-menu btn-primary" role="button">Consultas</a>
+		</div>
+
+		<div class="form-group">
+			<a href="#" id="eliminar_paciente" class="btn btn-lg btn-menu btn-danger" role="button">Eliminar</a>
 		</div>
 
 	</div><!-- end side bar -->
 	<div class="col-lg-10">
-		<div id="tabs">
-			<ul>
-				<li><a href="#fragment-1">Información Personal</a></li>
-				<li><a href="#fragment-2">Información de Contácto</a></li>
-				<li><a href="#fragment-3">Información Médica</a></li>
-			</ul>
-			<div id="fragment-1">
+		
+		<ul class="nav nav-tabs">
+			<li class="active"><a data-toggle="tab" href="#home">Información Personal</a></li>
+			<li><a data-toggle="tab" href="#menu1">Información de contacto</a></li>
+			<li><a data-toggle="tab" href="#menu2">Información Médica</a></li>
+		</ul>
+
+		<div class="tab-content">
+			<div id="home" class="tab-pane fade in active">
 				<div class="form-group">
 					{!! Form::label('nombre', 'Nombres', ['class' => 'control-label']) !!}
 					
@@ -61,17 +63,15 @@
 				</div>
 
 				<div class="form-group">
-						<label class="radio-inline">
-							{!! Form::radio('genero', 'Masculino', null, ['id' => 'masculino']) !!} Masculino
-						</label>
-						<label class="radio-inline">
-							{!! Form::radio('genero', 'Femenino', null, ['id' => 'femenino']) !!} Femenino
-						</label>
+					<label class="radio-inline">
+						{!! Form::radio('genero', 'Masculino', null, ['id' => 'masculino']) !!} Masculino
+					</label>
+					<label class="radio-inline">
+						{!! Form::radio('genero', 'Femenino', null, ['id' => 'femenino']) !!} Femenino
+					</label>
 				</div> <!-- end sexo -->
-
 			</div><!-- end tab 1 -->
-			<div id="fragment-2">
-
+			<div id="menu1" class="tab-pane fade">
 				<div class="form-group">
 					{!! Form::label('telefono', 'Teléfono', ['class' => 'control-label']) !!}
 					
@@ -101,11 +101,9 @@
 					
 					{!! Form::text('ciudad', null, ['class' => 'form-control margin-bottom']) !!}
 				</div>
-
-			</div><!-- end tab 2 -->
-			<div id="fragment-3">
-
-			
+			</div>
+			<div id="menu2" class="tab-pane fade">
+				
 
 				<div class="form-group">
 					{!! Form::label('sangre', 'Tipo de Sangre', ['class' => 'control-label']) !!}
@@ -124,28 +122,58 @@
 					
 					{!! Form::text('altura', null, ['class' => 'form-control margin-bottom']) !!}
 				</div>
+				<div class="form-group">
 
-			</div><!-- end tab 3 -->
-		</div><!-- end tabs -->
+					{!! Form::label('peso_kilos', 'Peso Kg', ['class' => 'control-label']) !!}
+					
+					{!! Form::text('peso_kilos', $peso_kilos, ['readonly', 'class' => 'form-control margin-bottom']) !!}
+				</div>
 
+				<div class="form-group">
+
+					{!! Form::label('imc', 'IMC', ['class' => 'control-label']) !!}
+					
+					{!! Form::text('imc', $imc, ['readonly', 'class' => 'form-control margin-bottom']) !!}
+				</div>
+			</div>
+		</div>
 
 		
 	</div><!-- end center screen -->
+	{!! Form::close() !!}
 </div><!-- end Row -->
-{!! Form::close() !!}
-@endsection
 @section('scripts')
-<script>
-	$(function() {
-		$( "#datepicker" ).datepicker({
+
+<script type="text/javascript">
+
+	$('#eliminar_paciente').click(function () {
+		swal({
+			title: "¿Desea borrar este paciente?",   
+			text: "Una vez borrado no habrá manera de recuperar su Información",   
+			type: "warning",   
+			showCancelButton: true,   
+			confirmButtonColor: "#DD6B55",   
+			confirmButtonText: "Si, Estoy seguro!",   
+			cancelButtonText: "Cancelar",   
+			closeOnConfirm: false,   
+			closeOnCancel: true 
+		}, 
+		function(isConfirm){   
+			if (isConfirm) {     
+				$.get('{!! url("pacientes/destroy/".$paciente->id) !!}').then(function () {
+
+					window.location.replace('{!! url("pacientes") !!}');
+				});
+			} 
 
 		});
+
 	});
 
-	$(function() {
-		$( "#tabs" ).tabs()
-	});
 
 
 </script>
+
 @endsection
+@endsection
+

@@ -14,13 +14,14 @@
 		</div>
 	</div><!-- end side bar -->
 	<div class="col-lg-10">
-		<div id="tabs">
-			<ul>
-				<li><a href="#fragment-1">Información Personal</a></li>
-				<li><a href="#fragment-2">Información de Contácto</a></li>
-				<li><a href="#fragment-3">Información Médica</a></li>
-			</ul>
-			<div id="fragment-1">
+		<ul class="nav nav-tabs">
+			<li class="active"><a data-toggle="tab" href="#home">Información Personal</a></li>
+			<li><a data-toggle="tab" href="#menu1">Información de contacto</a></li>
+			<li><a data-toggle="tab" href="#menu2">Información Médica</a></li>
+		</ul>
+
+		<div class="tab-content">
+			<div id="home" class="tab-pane fade in active">
 				<div class="form-group">
 					{!! Form::label('nombre', 'Nombres', ['class' => 'control-label']) !!}
 					
@@ -52,17 +53,15 @@
 				</div>
 
 				<div class="form-group">
-						<label class="radio-inline">
-							{!! Form::radio('genero', 'Masculino', null, ['id' => 'masculino']) !!} Masculino
-						</label>
-						<label class="radio-inline">
-							{!! Form::radio('genero', 'Femenino', null, ['id' => 'femenino']) !!} Femenino
-						</label>
+					<label class="radio-inline">
+						{!! Form::radio('genero', 'Masculino', null, ['id' => 'masculino']) !!} Masculino
+					</label>
+					<label class="radio-inline">
+						{!! Form::radio('genero', 'Femenino', null, ['id' => 'femenino']) !!} Femenino
+					</label>
 				</div> <!-- end sexo -->
-
 			</div><!-- end tab 1 -->
-			<div id="fragment-2">
-
+			<div id="menu1" class="tab-pane fade">
 				<div class="form-group">
 					{!! Form::label('telefono', 'Teléfono', ['class' => 'control-label']) !!}
 					
@@ -92,9 +91,9 @@
 					
 					{!! Form::text('ciudad', null, ['class' => 'form-control margin-bottom']) !!}
 				</div>
-
-			</div><!-- end tab 2 -->
-			<div id="fragment-3">
+			</div>
+			<div id="menu2" class="tab-pane fade">
+				
 
 				<div class="form-group">
 					{!! Form::label('sangre', 'Tipo de Sangre', ['class' => 'control-label']) !!}
@@ -113,26 +112,12 @@
 					
 					{!! Form::text('altura', null, ['class' => 'form-control margin-bottom']) !!}
 				</div>
-
-			</div><!-- end tab 3 -->
-		</div><!-- end tabs -->
+			</div>
+		</div>
 
 
 		
 	</div><!-- end center screen -->
 </div><!-- end Row -->
 {!! Form::close() !!}
-@endsection
-@section('scripts')
-<script>
-	$(function() {
-		$( "#datepicker" ).datepicker({
-
-		});
-	});
-
-	$(function() {
-		$( "#tabs" ).tabs()
-	});
-</script>
 @endsection

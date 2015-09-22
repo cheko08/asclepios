@@ -92,7 +92,7 @@ class PacienteController extends Controller
         $paciente->fill($request->all());
         $paciente->save();
 
-        return redirect('pacientes');
+        return redirect('pacientes')->with('global', 'El paciente ha sido actualizado');;
 
     }
 
@@ -107,6 +107,5 @@ class PacienteController extends Controller
        $paciente=Paciente::findOrFail($id);
        $paciente->delete();
 
-        return redirect('pacientes');
     }
 }

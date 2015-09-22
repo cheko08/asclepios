@@ -26,6 +26,7 @@
 
     <div class="container">
      @include('errors.errors')
+     @include('messages.global')
       @yield('content')
     </div>
     

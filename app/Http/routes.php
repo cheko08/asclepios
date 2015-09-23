@@ -59,7 +59,7 @@ Route::group(['middleware' => 'auth'], function () {
     /**
      * Borrar Paciente Route
      */
-    Route::get('pacientes/destroy/{id}', 'PacienteController@destroy');
+    Route::post('pacientes/destroy/{id}', 'PacienteController@destroy');
 
     /**
     *

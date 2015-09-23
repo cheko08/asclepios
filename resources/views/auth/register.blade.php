@@ -2,7 +2,7 @@
 @section('title', 'Registro')
 @section('content')
 
-{!! Form::open(['url' => 'auth/register', 'method' => 'POST']) !!}
+{!! Form::open(['url' => 'auth/register', 'method' => 'POST', 'class' => 'form-signin']) !!}
 
 <div class="form-group">
 	{!! Form::label('nombre', 'Nombres') !!}
@@ -35,7 +35,7 @@
 </div>
 
 <div class="form-group">
-    {!! Form::submit('Registrarse', ['class' => 'btn btn-default']) !!}
+    {!! Form::submit('Registrarse', ['class' => 'btn btn-primary']) !!}
 </div>
 
 {!! Form::close() !!}

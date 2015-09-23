@@ -33,6 +33,7 @@
 		<div class="tab-content">
 			<div id="home" class="tab-pane fade in active">
 				<div class="form-group">
+				<input type="hidden" name="_token" id="token" value="{{ csrf_token() }}" > 
 					{!! Form::label('nombre', 'Nombres', ['class' => 'control-label']) !!}
 					
 					{!! Form::text('nombre', null, ['class' => 'form-control margin-bottom']) !!}
@@ -147,6 +148,7 @@
 <script type="text/javascript">
 
 	$('#eliminar_paciente').click(function () {
+		var token = $('#token').val();
 		swal({
 			title: "¿Desea borrar este paciente?",   
 			text: "Una vez borrado no habrá manera de recuperar su Información",   
@@ -160,7 +162,11 @@
 		}, 
 		function(isConfirm){   
 			if (isConfirm) {     
-				$.get('{!! url("pacientes/destroy/".$paciente->id) !!}').then(function () {
+				$.ajax({
+					url: '{!! url("pacientes/destroy/".$paciente->id) !!}',
+					headers: {'X-CSRF-TOKEN': token},
+					type: 'post'
+					 }).then(function () {
 
 					window.location.replace('{!! url("pacientes") !!}');
 				});

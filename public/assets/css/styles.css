@@ -1,6 +1,8 @@
-.login{
-	max-width: 50%;
+.form-signin {
+  max-width: 330px;
+  margin: 0 auto;
 }
+
 
 .main-menu{
   padding-top: 50px;
@@ -39,3 +41,4 @@ margin-bottom:15px;
 .btn-menu{
 width: 120px;
 }
+

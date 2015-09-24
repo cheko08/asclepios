@@ -92,7 +92,7 @@ class PacienteController extends Controller
         $paciente->fill($request->all());
         $paciente->save();
 
-        return redirect('pacientes')->with('global', 'El paciente ha sido actualizado');;
+        return redirect('pacientes')->with('global', 'El paciente ha sido actualizado');
 
     }
 

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class CreatePacienteRequest extends Request
+class UpdateUserRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,7 +26,7 @@ class CreatePacienteRequest extends Request
         return [
             'nombre' => 'required',
             'apellido_paterno' => 'required',
-            'fecha_nacimiento' => 'required',
+            'email' => 'required|email',
         ];
     }
 }

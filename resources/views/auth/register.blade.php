@@ -1,7 +1,7 @@
 @extends('layout.master')
 @section('title', 'Registro')
 @section('content')
-
+@include('errors.errors')
 {!! Form::open(['url' => 'auth/register', 'method' => 'POST', 'class' => 'form-signin']) !!}
 
 <div class="form-group">

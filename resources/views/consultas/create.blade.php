@@ -1,7 +1,7 @@
 @extends('layout.master')
 @section('title', 'Consultas')
 @section('content')
-
+@include('errors.errors')
 <div class="row">
 	<div class="col-lg-2">
 	{!! Form::open(['url' => 'consultas/store', 'method' => 'POST', 'class' => 'form-horizontal']) !!}
@@ -20,42 +20,42 @@
 				<div class="form-group">
 					{!! Form::label('paciente', 'ID Paciente', ['class' => 'control-label']) !!}
 					
-					{!! Form::text('paciente_id', $paciente, ['readonly', 'class' => 'form-control margin-bottom']) !!}
+					{!! Form::text('paciente_id', $paciente, ['readonly', 'class' => 'form-control']) !!}
 					
 				</div>
 
 				<div class="form-group">
 					{!! Form::label('peso', 'Peso Kg', ['class' => 'control-label']) !!}
 					
-					{!! Form::text('peso_kilos', null, ['class' => 'form-control margin-bottom']) !!}
+					{!! Form::text('peso_kilos', null, ['class' => 'form-control']) !!}
 					
 				</div>
 
 				<div class="form-group">
 					{!! Form::label('imc', 'IMC', ['class' => 'control-label']) !!}
 					
-					{!! Form::text('imc', null, ['class' => 'form-control margin-bottom']) !!}
+					{!! Form::text('imc', null, ['class' => 'form-control']) !!}
 					
 				</div>
 
 					<div class="form-group">
 					{!! Form::label('porcentaje_grasa', 'Porcentaje de Grasa', ['class' => 'control-label']) !!}
 					
-					{!! Form::text('porcentaje_grasa', null, ['class' => 'form-control margin-bottom']) !!}
+					{!! Form::text('porcentaje_grasa', null, ['class' => 'form-control']) !!}
 					
 				</div>
 
 					<div class="form-group">
 					{!! Form::label('hidratacion', 'Hidratación', ['class' => 'control-label']) !!}
 					
-					{!! Form::text('hidratacion', null, ['class' => 'form-control margin-bottom']) !!}
+					{!! Form::text('hidratacion', null, ['class' => 'form-control']) !!}
 					
 				</div>
 
 						<div class="form-group">
 					{!! Form::label('comentarios', 'Comentarios', ['class' => 'control-label']) !!}
 					
-					{!! Form::textarea('comentarios', null, ['class' => 'form-control margin-bottom']) !!}
+					{!! Form::textarea('comentarios', null, ['class' => 'form-control']) !!}
 					
 				</div>
 

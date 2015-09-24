@@ -29,7 +29,13 @@ Route::group(['middleware' => 'auth'], function () {
 	 */
     Route::get('/', function ()    {
        return view('dashboard');
-    });
+   });
+  /**
+    *
+    *
+    *Pacientes Routes
+    *
+    */
 
     /**
      * Pacientes Route index
@@ -49,12 +55,12 @@ Route::group(['middleware' => 'auth'], function () {
      /**
      * Mostrar Paciente Route
      */
-    Route::get('pacientes/{id}', 'PacienteController@show');
+     Route::get('pacientes/{id}', 'PacienteController@show');
 
      /**
      * Actualizar Paciente Route
      */
-    Route::patch('pacientes/update/{id}', 'PacienteController@update');
+     Route::patch('pacientes/update/{id}', 'PacienteController@update');
 
     /**
      * Borrar Paciente Route
@@ -68,19 +74,47 @@ Route::group(['middleware' => 'auth'], function () {
     *
     */
 
+    /**
+     * Ver todas las consultas del paciente
+     */
     Route::get('consultas/{paciente_id}', 'ConsultaController@index');
 
+    /**
+     * Crear una consulta
+     */
     Route::get('consultas/create/{paciente_id}', 'ConsultaController@create');
 
+    /**
+     * Guardar consulta
+     */
     Route::post('consultas/store', 'ConsultaController@store');
 
+    /**
+     * Ver la consulta
+     */
     Route::get('consultas/edit/{id}', 'ConsultaController@edit');
 
+    /**
+     * Editar consulta
+     */
     Route::patch('consultas/update/{id}', 'ConsultaController@update');
 
+    /**
+     * Eliminar consulta
+     */
+    Route::post('consultas/destroy/{id}', 'ConsultaController@destroy');
 
 
+    /**
+    *
+    *
+    *Configuracion
+    *
+    */
 
+    Route::get('configuracion/configuracion-personal', 'ConfiguracionController@configuracionPersonal');
 
-
+    Route::patch('configuracion/updateConfiguracionPersonal/{id}', 'ConfiguracionController@updateConfiguracionPersonal');
+    
+    Route::get('configuracion/configuracion-seguridad', 'ConfiguracionController@configuracionSeguridad');    
 });//end Authenticated users routes

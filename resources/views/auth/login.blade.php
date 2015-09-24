@@ -1,7 +1,7 @@
 @extends('layout.master')
 @section('title', 'Iniciar Sesión')
 @section('content')
-
+@include('errors.errors')
 	{!! Form::open(['url' => 'auth/login', 'method' => 'POST', 'class' => 'form-signin']) !!}
 
 	<div class="form-group">

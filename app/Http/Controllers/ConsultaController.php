@@ -89,6 +89,7 @@ class ConsultaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $consulta=Consulta::findOrFail($id);
+        $consulta->delete();
     }
 }

@@ -1,9 +1,8 @@
 @extends('layout.master')
 @section('title', 'Pacientes')
 @section('content')
-@include('errors.errors')
 <div class="row">
-	<div class="col-lg-2">
+<div class="col-sm-3 col-md-2 sidebar">
 		{!! Form::model($paciente, ['url' => ['pacientes/update', $paciente->id], 'method' => 'PATCH', 'class' => 'form-horizontal']) !!}
 
 		<div class="form-group">
@@ -22,7 +21,9 @@
 		</div>
 
 	</div><!-- end side bar -->
-	<div class="col-lg-10">
+	<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+	@include('messages.global-configuracion')
+	 @include('errors.errors')
 		
 		<ul class="nav nav-tabs">
 			<li class="active"><a data-toggle="tab" href="#home">Información Personal</a></li>

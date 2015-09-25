@@ -47,7 +47,7 @@ class ConsultaController extends Controller
         if($consulta)
         {
             
-            return redirect('consultas/'.$consulta->paciente_id);
+            return redirect('consultas/'.$consulta->paciente_id)->with('global-configuracion', 'La consulta ha sido creada!');
         }
     }
 
@@ -78,7 +78,7 @@ class ConsultaController extends Controller
         $consulta->fill($request->all());
         $consulta->save();
 
-        return redirect('consultas/'.$consulta->paciente_id);
+        return redirect('consultas/'.$consulta->paciente_id)->with('global-configuracion', 'Sus cambios han sido guardados!');
     }
 
     /**
@@ -91,5 +91,6 @@ class ConsultaController extends Controller
     {
         $consulta=Consulta::findOrFail($id);
         $consulta->delete();
+        
     }
 }

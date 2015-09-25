@@ -1,9 +1,8 @@
 @extends('layout.master')
 @section('title', 'Consultas')
 @section('content')
-@include('errors.errors')
 <div class="row">
-	<div class="col-lg-2">
+	<div class="col-sm-3 col-md-2 sidebar">
 	{!! Form::open(['url' => 'consultas/store', 'method' => 'POST', 'class' => 'form-horizontal']) !!}
 
 		<div class="form-group">
@@ -14,9 +13,10 @@
 		</div>
 	</div>
 
-	<div class="col-lg-10">
-		<div class="panel panel-default">
-			<div class="panel-body">
+	<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+	@include('messages.global-configuracion')
+	 @include('errors.errors')
+		
 				<div class="form-group">
 					{!! Form::label('paciente', 'ID Paciente', ['class' => 'control-label']) !!}
 					
@@ -58,10 +58,6 @@
 					{!! Form::textarea('comentarios', null, ['class' => 'form-control']) !!}
 					
 				</div>
-
-
-			</div><!-- end panel body -->
-		</div><!-- end panel -->
 	</div>
 </div>
 @endsection

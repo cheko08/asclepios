@@ -4,7 +4,7 @@
 <div class="row">
 	<div class="col-sm-3 col-md-2 sidebar">
 		<ul class="nav nav-sidebar">
-			<li class="active"><a href="{{ url('configuracion/configuracion-personal') }}">Configuración Personal <span class="sr-only">(current)</span></a></li>
+			<li class="active"><a href="{{ url('configuracion/configuracion-personal') }}">Configuración Personal<span class="sr-only">(current)</span></a></li>
 			<li><a href="#">Catálogos</a></li>
 			<li><a href="{{ url('configuracion/configuracion-seguridad') }}">Configuración de Seguridad</a></li>
 

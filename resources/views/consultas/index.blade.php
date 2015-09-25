@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="row">
-	<div class="col-lg-2">
+	<div class="col-sm-3 col-md-2 sidebar">
 	
 <a href="{{ url('consultas/create/'.$paciente) }}" class="btn btn-lg btn-primary" role="button">Nueva Consulta</a>
 	
@@ -16,9 +16,10 @@
 	
 	
 
-	<div class="col-lg-10">
-		<div class="panel panel-default">
-			<div class="panel-body">
+	<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+	@include('messages.global-configuracion')
+	 @include('errors.errors')
+		
 				@foreach($consultas as $consulta)
 
 				<a href="{{ url('consultas/edit/'.$consulta->id) }}"  class="btn btn-lg btn-success pacientes-menu">
@@ -26,8 +27,7 @@
 				</a>
 
 				@endforeach
-			</div><!-- end panel body -->
-		</div><!-- end panel -->
+	
 	</div>
 </div>
 @endsection

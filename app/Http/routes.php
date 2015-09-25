@@ -116,5 +116,8 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::patch('configuracion/updateConfiguracionPersonal/{id}', 'ConfiguracionController@updateConfiguracionPersonal');
     
-    Route::get('configuracion/configuracion-seguridad', 'ConfiguracionController@configuracionSeguridad');    
+    Route::get('configuracion/configuracion-seguridad', 'ConfiguracionController@configuracionSeguridad');
+
+    Route::patch('configuracion/configuracion-seguridad/{id}','ConfiguracionController@cambiarContrasena'); 
+       
 });//end Authenticated users routes

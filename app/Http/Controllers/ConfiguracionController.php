@@ -8,6 +8,8 @@ use App\Http\Controllers\Controller;
 use App\User;
 use Auth;
 use App\Http\Requests\UpdateUserRequest;
+use App\Http\Requests\CambiarPasswordRequest;
+use Hash;
 
 class ConfiguracionController extends Controller
 {
@@ -50,5 +52,23 @@ class ConfiguracionController extends Controller
 	{
 		$user = User::find(Auth::user()->id);
 		return view('configuracion.configuracion-seguridad', compact('user'));
+	}
+
+	public function cambiarContrasena(CambiarPasswordRequest $request, $id)
+	{
+		$user         = User::FindOrFail($id);
+		$oldPassword  = $request->input('old_password');
+		$newPassword  = $request->input('new_password');
+
+
+		if(Hash::check($oldPassword, $user->password))
+		{
+			$user->password =bcrypt($newPassword);
+			$user->save();
+
+			return redirect('configuracion/configuracion-seguridad')->with('global-configuracion', 'La contraseña ha sido actualizada');;
+		}
+
+		return  response('Unauthorized.', 401);
 	}
 }

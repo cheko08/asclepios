@@ -6,7 +6,7 @@
 		<ul class="nav nav-sidebar">
 			<li><a href="{{ url('configuracion/configuracion-personal') }}">Configuración Personal</a></li>
 			<li><a href="#">Catálogos</a></li>
-			<li class="active"><a href="{{ url('configuracion/configuracion-seguridad') }}">Configuración de Seguridad <span class="sr-only">(current)</span></a></li>
+			<li class="active"><a href="{{ url('configuracion/configuracion-seguridad') }}">Configuración de Seguridad<span class="sr-only">(current)</span></a></li>
 
 		</ul>
 
@@ -15,7 +15,7 @@
 		@include('messages.global-configuracion')
 		@include('errors.errors')
 
-		{!! Form::model($user, ['url' => ['configuracion/updateConfiguracionSeguridad', $user->id], 'method' => 'PATCH', 'class' => 'form-horizontal']) !!}
+		{!! Form::model($user, ['url' => ['configuracion/configuracion-seguridad', $user->id], 'method' => 'PATCH', 'class' => 'form-horizontal']) !!}
 
 		
 
@@ -34,7 +34,7 @@
 
 		<div class="form-group">
 			{!! Form::label('password', 'Nueva Contraseña') !!}
-			{!! Form::password('password', ['class' => 'form-control']) !!}
+			{!! Form::password('new_password', ['class' => 'form-control']) !!}
 		</div>
 
 		<div class="form-group">

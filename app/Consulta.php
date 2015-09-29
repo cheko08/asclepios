@@ -9,7 +9,6 @@ class Consulta extends Model
 {
   
     
-    protected $guarded = ['id', 'created_at'];
     /**
      * The database table used by the model.
      *

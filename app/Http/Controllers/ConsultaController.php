@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Consulta;
+use App\Paciente;
 use App\Http\Requests\CreateConsultaRequest;
 
 class ConsultaController extends Controller
@@ -18,8 +19,19 @@ class ConsultaController extends Controller
     public function index($paciente_id)
     {
         $paciente = $paciente_id;
-        $consultas = Consulta::where('paciente_id', $paciente_id)->orderBy('created_at','DESC')->get();
+        $consultas = Consulta::where('paciente_id', $paciente_id)->orderBy('created_at','DESC')->paginate(15);
         return view('consultas.index', compact('consultas', 'paciente'));
+    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function indexGraficas($paciente_id)
+    {
+        $paciente = Paciente::find($paciente_id);
+        $consultas = Consulta::where('paciente_id', $paciente_id)->orderBy('created_at','DESC')->take(8)->get();
+        return view('consultas.index-graficas', compact('consultas', 'paciente'));
     }
 
     /**

@@ -7,7 +7,7 @@
 	
 <a href="{{ url('consultas/create/'.$paciente) }}" class="btn btn-lg btn-primary" role="button">Nueva Consulta</a>
 	
-
+</br></br><a href="{{ url('consultas/graficas/'.$paciente) }}" class="btn btn-lg btn-default" role="button">Ver Gráficas</a>
 
 			</br></br><a href="{{ url('pacientes/'.$paciente) }}" class="btn btn-lg btn-default" role="button">Cancelar</a>
 		
@@ -23,10 +23,14 @@
 				@foreach($consultas as $consulta)
 
 				<a href="{{ url('consultas/edit/'.$consulta->id) }}"  class="btn btn-lg btn-success pacientes-menu">
-					{{$consulta->created_at}} 
+					{{date("d/m/Y",strtotime($consulta->created_at))}} 
 				</a>
 
 				@endforeach
+
+				<div>{!! $consultas->render() !!}</div>
+
+				
 	
 	</div>
 </div>

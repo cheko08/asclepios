@@ -79,6 +79,11 @@ Route::group(['middleware' => 'auth'], function () {
      */
     Route::get('consultas/{paciente_id}', 'ConsultaController@index');
 
+     /**
+     * Ver todas las consultas del paciente
+     */
+    Route::get('consultas/graficas/{paciente_id}', 'ConsultaController@indexGraficas');
+
     /**
      * Crear una consulta
      */

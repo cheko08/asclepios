@@ -22,7 +22,6 @@ class ConfiguracionController extends Controller
 	public function updateConfiguracionPersonal(UpdateUserRequest $request, $id)
 	{
 		$user = User::find($id);
-
 		if($request->hasFile('logo_consultorio'))
 		{
 			if($request->file('logo_consultorio')->isValid())
@@ -33,7 +32,6 @@ class ConfiguracionController extends Controller
 				$user->logo_consultorio = $logo_consultorio;
 			}
 		}
-
 		$user->nombre = $request->input('nombre');
 		$user->apellido_paterno = $request->input('apellido_paterno');
 		$user->apellido_materno = $request->input('apellido_materno');
@@ -42,11 +40,10 @@ class ConfiguracionController extends Controller
 		$user->telefono = $request->input('telefono');
 		$user->telefono_2 = $request->input('telefono_2');
 		$user->direccion = $request->input('direccion');
-
 		$user->save();
-
 		return redirect('configuracion/configuracion-personal')->with('global-configuracion', 'El usuario ha sido actualizado');
 	}
+
 
 	public function configuracionSeguridad()
 	{

@@ -49,7 +49,7 @@ class PacienteController extends Controller
         {
             $paciente->user_id = Auth::user()->id;
             $paciente->save();
-            return redirect('pacientes')->with('global-configuracion', 'El paciente ha sido creado!');
+            return redirect('pacientes')->with('global-configuracion', 'El paciente '.$paciente->nombre.' ha sido creado!');
         }
     }
 
@@ -92,7 +92,7 @@ class PacienteController extends Controller
         $paciente->fill($request->all());
         $paciente->save();
 
-        return redirect('pacientes')->with('global-configuracion', 'El paciente ha sido actualizado');
+        return redirect('pacientes')->with('global-configuracion', 'El paciente '.$paciente->nombre.' ha sido actualizado');
 
     }
 

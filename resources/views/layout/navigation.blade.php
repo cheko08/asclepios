@@ -1,5 +1,5 @@
  <!-- Static navbar -->
-    <nav class="navbar navbar-default navbar-static-top">
+    <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
@@ -19,7 +19,7 @@
             <li class="{{Request::path() == '/' ? 'active' : ''}}"><a href="{{ url('/') }}">Inicio</a></li>
             <li class="{{Request::path() == 'pacientes' ? 'active' : ''}}"><a href="{{ url('pacientes') }}">Pacientes</a></li>
             <li class="{{Request::path() == 'citas' ? 'active' : ''}}"><a href="#contact">Citas</a></li>
-            <li class="{{Request::path() == 'dietas' ? 'active' : ''}}"><a href="#contact">Dietas</a></li>
+            <li class="{{Request::path() == 'dietas' ? 'active' : ''}}"><a href="{{ url('dietas') }}">Dietas</a></li>
             <li class="{{Request::path() == 'reportes' ? 'active' : ''}}"><a href="#contact">Reportes</a></li>
           </ul>
         @endif

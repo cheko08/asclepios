@@ -124,5 +124,19 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('configuracion/configuracion-seguridad', 'ConfiguracionController@configuracionSeguridad');
 
     Route::patch('configuracion/configuracion-seguridad/{id}','ConfiguracionController@cambiarContrasena'); 
+
+
+    /**
+    *
+    *
+    *Dietas
+    *
+    */
+   
+   Route::get('dietas', 'DietaController@index');
+
+   Route::get('dietas/create', 'DietaController@create');
+
+   Route::get('dietas/edit/{id}', 'DietaController@edit');
        
 });//end Authenticated users routes

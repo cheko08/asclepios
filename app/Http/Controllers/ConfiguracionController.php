@@ -7,7 +7,6 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\User;
 use Auth;
-use App\Http\Requests\UpdateUserRequest;
 use App\Http\Requests\CambiarPasswordRequest;
 use Hash;
 

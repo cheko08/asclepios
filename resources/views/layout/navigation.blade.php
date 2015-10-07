@@ -18,7 +18,7 @@
           <ul class="nav navbar-nav">
             <li class="{{Request::path() == '/' ? 'active' : ''}}"><a href="{{ url('/') }}">Inicio</a></li>
             <li class="{{Request::path() == 'pacientes' ? 'active' : ''}}"><a href="{{ url('pacientes') }}">Pacientes</a></li>
-            <li class="{{Request::path() == 'citas' ? 'active' : ''}}"><a href="#contact">Citas</a></li>
+            <li class="{{Request::path() == 'citas' ? 'active' : ''}}"><a href="{{ url('citas') }}">Citas</a></li>
             <li class="{{Request::path() == 'dietas' ? 'active' : ''}}"><a href="{{ url('dietas') }}">Dietas</a></li>
             <li class="{{Request::path() == 'reportes' ? 'active' : ''}}"><a href="#contact">Reportes</a></li>
           </ul>

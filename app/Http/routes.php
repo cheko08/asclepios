@@ -138,5 +138,17 @@ Route::group(['middleware' => 'auth'], function () {
    Route::get('dietas/create', 'DietaController@create');
 
    Route::get('dietas/edit/{id}', 'DietaController@edit');
+
+
+    /**
+    *
+    *
+    *Citas
+    *
+    */
+   
+   Route::get('citas', 'CitaController@index');
+   Route::get('citas/create', 'CitaController@create');
+
        
 });//end Authenticated users routes

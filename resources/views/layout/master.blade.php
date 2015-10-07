@@ -11,6 +11,8 @@
   <!-- Bootstrap -->
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.4.0/fullcalendar.min.css">
+  
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -19,6 +21,8 @@
       <![endif]-->
       <link href="{{ asset('assets/css/styles.css') }}" rel="stylesheet">
       <link href="{{ asset('assets/css/sweetalert.css') }}" rel="stylesheet">
+    
+  </script>
     </head>
     <body>
 
@@ -33,6 +37,7 @@
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
      <!-- Include all compiled plugins (below), or include individual files as needed -->
      <script src="{{ asset('assets/js/sweetalert.min.js') }}"></script>
+      <script src="{{ asset('assets/js/moment.min.js') }}"></script>
      <script src="http://code.highcharts.com/highcharts.js"></script>
      <!-- Latest compiled and minified JavaScript -->
      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>

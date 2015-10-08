@@ -12,4 +12,16 @@ class Cita extends Model
      * @var string
      */
     protected $table = 'citas';
+
+     protected $fillable = [
+     'paciente_id',
+     'fecha',
+     'hora_inicio',
+     'hora_fin',
+      ];
+
+       public function paciente ()
+    {
+    	return $this->belongsTo('App\Paciente');
+    }
 }

@@ -37,30 +37,34 @@
 			minTime:'06:00:00',
 			businessHours:
 			{
-    start: '08:00', 
-    end: '19:00', 
+				start: '08:00', 
+				end: '19:00', 
 
-    dow: [ 1, 2, 3, 4, 5, 6 ]
+				dow: [ 1, 2, 3, 4, 5, 6 ]
 
-},
-header: {
-	left: 'prev,next today',
-	center: 'title',
-	right: 'month,agendaWeek,agendaDay'
-},
-editable: false,
+			},
+			header: {
+				left: 'prev,next today',
+				center: 'title',
+				right: 'agendaDay,agendaWeek,month'
+			},
+			editable: false,
 			eventLimit: true, // allow "more" link when too many events
 			events: [
-			
-			{
-				title: 'Meeting',
-				start: '2015-10-06T10:30:00',
-				end: '2015-10-06T11:30:00',
-				url: 'www.google.com'
-			},
-			
-			]
-		});
+
+			<?php foreach($citas as $cita){ ?>
+				{
+
+					title: '{!! $cita->paciente->nombre !!} {!! $cita->paciente->apellido_paterno !!}',
+					start: '{!! $cita->fecha !!}T{!! $cita->hora_inicio !!}',
+					end: '{!! $cita->fecha !!}T{!! $cita->hora_fin !!}',
+					url: '{!! url("pacientes/$cita->paciente_id") !!}'
+				},
+				<?php } ?>
+
+
+				]
+			});
 
 	});
 

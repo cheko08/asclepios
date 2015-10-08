@@ -30,6 +30,6 @@ class CreateAlimentoDietaTable extends Migration
      */
     public function down()
     {
-        //
+         Schema::drop('alimento_dieta');
     }
 }

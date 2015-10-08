@@ -39,6 +39,6 @@ class CreateDietasTable extends Migration
      */
     public function down()
     {
-        //
+         Schema::drop('dietas');
     }
 }

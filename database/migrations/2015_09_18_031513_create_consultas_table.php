@@ -36,6 +36,6 @@ class CreateConsultasTable extends Migration
      */
     public function down()
     {
-        //
+         Schema::drop('consultas');
     }
 }

@@ -26,7 +26,7 @@ class CreatePacienteRequest extends Request
         return [
             'nombre' => 'required',
             'apellido_paterno' => 'required',
-            'fecha_nacimiento' => 'required',
+            'telefono' => 'required_without:celular',
         ];
     }
 }

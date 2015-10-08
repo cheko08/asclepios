@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreateCitaRequest;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Paciente;
+use App\Cita;
+use Auth;
 
 class CitaController extends Controller
 {
@@ -15,7 +19,8 @@ class CitaController extends Controller
      */
     public function index()
     {
-        return view('citas.index');
+        $citas = Cita::all();
+        return view('citas.index', compact('citas'));
     }
 
     /**
@@ -25,7 +30,8 @@ class CitaController extends Controller
      */
     public function create()
     {
-        return view('citas.create');
+        $pacientes = Paciente::where('user_id', Auth::user()->id)->get();
+        return view('citas.create', compact('pacientes'));
     }
 
     /**
@@ -34,9 +40,16 @@ class CitaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateCitaRequest $request)
     {
-        //
+         $cita = Cita::create($request->all());
+
+
+        if($cita)
+        {
+           
+            return redirect('citas')->with('global-configuracion', 'La cita ha sido creada!');
+        }
     }
 
     /**

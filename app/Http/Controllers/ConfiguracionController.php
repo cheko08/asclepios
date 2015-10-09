@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CambiarPasswordRequest;
+use App\Http\Requests\UpdateUserRequest;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
 use App\User;
 use Auth;
-use App\Http\Requests\CambiarPasswordRequest;
 use Hash;
 
 class ConfiguracionController extends Controller

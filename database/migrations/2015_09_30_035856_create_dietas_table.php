@@ -25,7 +25,8 @@ class CreateDietasTable extends Migration
             $table->text('informacion_nutrimental_4');
             $table->text('informacion_nutrimental_5');
             $table->text('informacion_nutrimental_6');
-            $table->text('informacion_nutrimental_7');       
+            $table->text('informacion_nutrimental_7');
+            $table->integer('user_id');       
             $table->softDeletes();
             $table->timestamps();
 

@@ -150,6 +150,9 @@ Route::group(['middleware' => 'auth'], function () {
    Route::get('citas', 'CitaController@index');
    Route::get('citas/create', 'CitaController@create');
    Route::post('citas/store', 'CitaController@store');
+   Route::get('citas/show/{id}', 'CitaController@show');
+   Route::patch('citas/update/{id}', 'CitaController@update');
+   Route::post('citas/destroy/{id}', 'CitaController@destroy');
 
        
 });//end Authenticated users routes

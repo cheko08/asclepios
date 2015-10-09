@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class CreateCitaRequest extends Request
+class UpdateCitaRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,15 +23,10 @@ class CreateCitaRequest extends Request
      */
     public function rules()
     {
-
-        $yesterday = date('Y-m-d', strtotime('-1 days'));
         return [
-            'nombre' => 'required_without:paciente_id',
-            'apellido_paterno' => 'required_without:paciente_id',
-            'celular' => 'required_without_all:paciente_id,telefono',
-            'fecha'    => 'required|date|after:'.$yesterday,
+            'fecha' => 'required',
             'hora_inicio' => 'required',
-            'hora_fin'  => 'required',
+            'hora_fin' => 'required'
         ];
     }
 }

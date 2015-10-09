@@ -23,6 +23,8 @@
 		@include('messages.global-configuracion')
 		@include('errors.errors')
 
+		<input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+
 		<div class="form-group">
 			{!! Form::label('fecha', 'Fecha de la cita', ['class' => 'control-label']) !!}
 			<div class="input-group">

@@ -58,7 +58,7 @@
 					title: '{!! $cita->paciente->nombre !!} {!! $cita->paciente->apellido_paterno !!}',
 					start: '{!! $cita->fecha !!}T{!! $cita->hora_inicio !!}',
 					end: '{!! $cita->fecha !!}T{!! $cita->hora_fin !!}',
-					url: '{!! url("pacientes/$cita->paciente_id") !!}'
+					url: '{!! url("citas/show/$cita->id") !!}'
 				},
 				<?php } ?>
 

@@ -16,6 +16,7 @@ class CreateCitasTable extends Migration
         {
             $table->increments('id');
             $table->integer('paciente_id');
+            $table->integer('user_id');
             $table->date('fecha');
             $table->string('hora_inicio');
             $table->string('hora_fin');

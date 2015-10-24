@@ -24,6 +24,28 @@ class PacienteController extends Controller
         return view('pacientes.index', compact('pacientes'));
     }
 
+    public function buscar(Request $request)
+    {
+        $first =DB::table('pacientes')
+        ->where('nombre',$request->input('paciente'))
+        ->where('user_id', Auth::user()->id)
+        ->where('deleted_at', null);
+
+        $second = DB::table('pacientes')
+        ->where('apellido_paterno',$request->input('paciente'))
+        ->where('user_id', Auth::user()->id)
+        ->where('deleted_at', null);
+
+        $pacientes = DB::table('pacientes')
+        ->where('apellido_materno',$request->input('paciente'))
+        ->where('user_id', Auth::user()->id)
+        ->where('deleted_at', null)
+        ->union($first)
+        ->union($second)->get();
+       
+        return view('pacientes.index', compact('pacientes'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *

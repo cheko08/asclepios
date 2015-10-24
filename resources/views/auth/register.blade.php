@@ -40,4 +40,16 @@
 
 {!! Form::close() !!}
 
+{!! Form::open(['url' => 'stripe', 'method' => 'POST']) !!}
+  <script
+    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="pk_test_1uYojjUSrYhLlC6P8vQCGBVo"
+    data-amount="7900"
+    data-name="Asclepios"
+    data-description="Subscripción Mensual ($79.00 MXN)"
+    data-image="{{ asset('assets/images/favicon.png')  }}"
+    data-locale="auto">
+  </script>
+</form>
+
 @endsection

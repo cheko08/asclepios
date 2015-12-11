@@ -130,4 +130,5 @@ class PacienteController extends Controller
        $paciente->delete();
 
     }
+
 }

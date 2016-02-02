@@ -13,6 +13,10 @@
 		</div>
 
 		<div class="form-group">
+			<a href="{{ url('dietas/show/'.$consulta->dieta_id) }}" class="btn btn-menu btn-lg btn-default" role="button">Ver dieta</a>
+		</div>
+
+		<div class="form-group">
 			<a href="#" id="eliminar_consulta" class="btn btn-lg btn-menu btn-danger" role="button">Eliminar</a>
 		</div>
 	</div>

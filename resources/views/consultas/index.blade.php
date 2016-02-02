@@ -7,7 +7,7 @@
 	
 <a href="{{ url('consultas/create/'.$paciente) }}" class="btn btn-lg btn-primary" role="button">Nueva Consulta</a>
 	
-</br></br><a href="{{ url('consultas/graficas/'.$paciente) }}" class="btn btn-lg btn-default" role="button">Ver Gráficas</a>
+
 
 			</br></br><a href="{{ url('pacientes/'.$paciente) }}" class="btn btn-lg btn-default" role="button">Cancelar</a>
 		

@@ -16,6 +16,8 @@ class CreateAlimentosTable extends Migration
         {
             $table->increments('id');
             $table->string('nombre');
+            $table->integer('dia');
+            $table->integer('dieta_id');
             $table->string('tipo');
             $table->double('calorias');
             $table->double('grasas'); 

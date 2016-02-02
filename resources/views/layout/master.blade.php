@@ -12,7 +12,8 @@
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.4.0/fullcalendar.min.css">
-  
+   <!-- Fonts -->
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -27,7 +28,7 @@
     <body>
 
       @include('layout.navigation')
-      <div class="container">
+      <div class="container-fluid">
        @include('messages.global')
        @yield('content')
      </div>
@@ -39,6 +40,7 @@
      <script src="{{ asset('assets/js/sweetalert.min.js') }}"></script>
       <script src="{{ asset('assets/js/moment.min.js') }}"></script>
      <script src="http://code.highcharts.com/highcharts.js"></script>
+      <script src="{{ asset('assets/js/add_field.js') }}"></script>
      <!-- Latest compiled and minified JavaScript -->
      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
      @yield('scripts')

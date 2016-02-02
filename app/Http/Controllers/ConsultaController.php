@@ -8,6 +8,8 @@ use App\Http\Controllers\Controller;
 use App\Consulta;
 use App\Paciente;
 use App\Http\Requests\CreateConsultaRequest;
+use Auth;
+use App\Dieta;
 
 class ConsultaController extends Controller
 {
@@ -30,7 +32,7 @@ class ConsultaController extends Controller
     public function indexGraficas($paciente_id)
     {
         $paciente = Paciente::find($paciente_id);
-        $consultas = Consulta::where('paciente_id', $paciente_id)->orderBy('created_at','DESC')->take(8)->get();
+        $consultas = Consulta::where('paciente_id', $paciente_id)->orderBy('created_at','DESC')->take(3)->get();
         return view('consultas.index-graficas', compact('consultas', 'paciente'));
     }
 
@@ -42,7 +44,8 @@ class ConsultaController extends Controller
     public function create($paciente_id)
     {
         $paciente = $paciente_id;
-        return view('consultas.create', compact('paciente'));
+        $dietas = Dieta::where('user_id',Auth::user()->id)->get();
+        return view('consultas.create', compact('paciente','dietas'));
     }
 
     /**

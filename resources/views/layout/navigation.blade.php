@@ -26,7 +26,7 @@
       <li class="{{Request::path() == 'pacientes' ? 'active' : ''}}"><a href="{{ url('pacientes') }}">Pacientes</a></li>
       <li class="{{Request::path() == 'citas' ? 'active' : ''}}"><a href="{{ url('citas') }}">Citas</a></li>
       <li class="{{Request::path() == 'dietas' ? 'active' : ''}}"><a href="{{ url('dietas') }}">Dietas</a></li>
-      <li class="{{Request::path() == 'reportes' ? 'active' : ''}}"><a href="#contact">Reportes</a></li>
+      <li class="{{Request::path() == 'reportes' ? 'active' : ''}}"><a href="{{ url('reportes') }}">Reportes</a></li>
     </ul>
 
     @endif

@@ -1,7 +1,49 @@
-body { padding-top: 70px; }
+body { padding-top: 70px;
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+}
+
+/*sign in page*/
+
+
+.front-page-title{
+    font-size: 52px;
+    line-height: 50px;
+    margin-bottom: 25px;
+    letter-spacing: 20px;
+    color: #5a5a5a;
+}
+
+#front{
+  background-image: url("/assets/images/front.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 300px;
+}
+
+
+
+fa-btn {
+  margin-right: 8px;
+}
+
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/*end sign in page*/
 
 .form-signin {
-  max-width: 330px;
+  max-width: 75%;
+  margin: 0 auto;
+}
+
+.form-register {
+  max-width: 50%;
   margin: 0 auto;
 }
 
@@ -39,7 +81,7 @@ body { padding-top: 70px; }
 }
 
 .btn-menu{
-width: 120px;
+  width: 120px;
 }
 
 /*side bar*/
@@ -86,11 +128,24 @@ width: 120px;
  */
 
 
-@media (min-width: 768px) {
+ @media (min-width: 768px) {
   .main {
-    padding-right: 40px;
+    padding-right: 360px;
     padding-left: 40px;
   }
 }
 
 
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #print * {
+    visibility: visible;
+  }
+  #print {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}

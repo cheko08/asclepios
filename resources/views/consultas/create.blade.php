@@ -52,6 +52,21 @@
 					
 				</div>
 
+				<div class="form-group">
+					{!! Form::label('dieta', 'Dieta', ['class' => 'control-label']) !!}
+					
+					<select class="form-control" name="dieta_id">
+				<option value=""></option>
+
+				@foreach($dietas as $dieta)
+				<option value="{{ $dieta->id }}">{{$dieta->nombre.' - '.$dieta->numero_calorias.' Calorias' }}</option>
+				@endforeach
+
+
+			</select>
+					
+				</div>
+
 						<div class="form-group">
 					{!! Form::label('comentarios', 'Comentarios', ['class' => 'control-label']) !!}
 					

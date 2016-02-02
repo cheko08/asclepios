@@ -148,7 +148,13 @@ Route::group(['middleware' => 'auth'], function () {
 
    Route::get('dietas/create', 'DietaController@create');
 
+   Route::post('dietas/store', 'DietaController@store');
+
    Route::get('dietas/edit/{id}', 'DietaController@edit');
+
+   Route::get('dietas/show/{id}', 'DietaController@show');
+   
+   Route::post('dietas/destroy/{id}', 'DietaController@destroy');
 
 
     /**
@@ -164,6 +170,15 @@ Route::group(['middleware' => 'auth'], function () {
    Route::get('citas/show/{id}', 'CitaController@show');
    Route::patch('citas/update/{id}', 'CitaController@update');
    Route::post('citas/destroy/{id}', 'CitaController@destroy');
+
+
+
+   /*
+   *
+   *Reportes
+   * 
+    */
+   Route::get('reportes', 'ReportesController@selectPatient');
 
        
 });//end Authenticated users routes

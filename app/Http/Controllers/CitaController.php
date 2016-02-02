@@ -44,15 +44,12 @@ class CitaController extends Controller
     public function store(CreateCitaRequest $request)
     {
         
-
-
         $paciente_id = $request->input('paciente_id');
         if($request->input('paciente_id') == '')
 
           {
                $paciente = Paciente::create($request->all());
-               $paciente_id = $paciente->id;
-               
+               $paciente_id = $paciente->id;           
           }  
 
           $cita = Cita::create(array(
@@ -66,9 +63,7 @@ class CitaController extends Controller
 
 
         if($cita)
-        {
-
-           
+        {  
             return redirect('citas')->with('global-configuracion', 'La cita ha sido creada!');
         }
     }
